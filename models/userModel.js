@@ -19,3 +19,8 @@ exports.createUser = async (data) => {
 exports.findUserByEmail = async (email) => {
     return await query("SELECT * FROM users WHERE email = ?", [email]);
 };
+
+exports.createSession = async (userId) => {
+    const sql = `INSERT INTO user_sessions (user_id) VALUES (?)`;
+    return await query(sql, [userId]);
+};
