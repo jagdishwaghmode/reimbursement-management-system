@@ -16,14 +16,14 @@ const db = pool.promise();
 const testConnection = async () => {
     try {
         const connection = await db.getConnection();
-        console.log("✅ MySQL Database connected successfully!");
+        console.log("MySQL Database connected successfully!");
         connection.release();
         return true;
     } catch (error) {
-        console.error("❌ MySQL Connection failed!");
+        console.error("MySQL Connection failed!");
         console.error("Error Code:", error.code);
         console.error("Error Message:", error.message);
-        console.error("\n📋 Troubleshooting:");
+        console.error("\nTroubleshooting:");
         console.error("1. Ensure MySQL server is running");
         console.error("2. Verify credentials - user: root, password: root123");
         console.error("3. Create database: CREATE DATABASE reimbursement_db;");

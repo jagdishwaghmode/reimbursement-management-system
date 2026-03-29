@@ -22,3 +22,7 @@ exports.createExpense = async (data) => {
         data.date
     ]);
 };
+
+exports.getExpensesByUser = async (userId) => {
+    return await query("SELECT * FROM expenses WHERE submitted_by = ? ORDER BY expense_date DESC", [userId]);
+};
